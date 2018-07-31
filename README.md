@@ -145,6 +145,12 @@ YBB.hybrid.location.get().then(function(location) {
 | cityName | String | 城市名 |
 | region | String | 区域 |
 
+返回样例
+
+```
+{"result":"{\"cityName\":\"SanFrancisco\",\"region\":\"\",\"latitude\":37.785835266113281,\"longitude\":-122.40641784667969,\"detailAddress\":\"EllisStreet\"}","errorCode":"0"}
+```
+
 ### 5.隐藏导航栏
 
 初版
