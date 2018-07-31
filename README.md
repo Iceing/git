@@ -1,7 +1,26 @@
 ### 1. 扫码
 
+初版
+
+```
+dd.biz.util.scan({
+    type: "qrCode",
+    onSuccess: function(data) {
+        // data =>{ text: 扫描到的文字} 
+    },
+   onFail: function(error) {
+   }
+})
 ```
 
+改版
+
+```
+var scanType = 'qrCode';
+YBB.hybrid.util.scan(scanType).then(function(result) {
+    // result = {text: 'text text'}
+    console.log(result);
+});
 ```
 
 返回说明
@@ -12,13 +31,74 @@
 
 ### 2. 选择图片
 
+初版
+
+```
+dd.device.notification.selectImg ({
+    cancelButton: “取消”，
+    otherButtons: [“拍照”,”相册”]，
+    onSuccess: function(data) {
+        // data => {"imgPath":path} 
+    },
+    onFail: function(error) {}
+})
 ```
 
+改版
+
+```
+var params = {
+    cancelButton: '取消',
+    otherButtons: ['拍照', '相册']
+};
+
+YBB.hybrid.device.selectImg(params).then(function(info) {
+    // info.imgPath 为本地地址
+    console.log(info.imgPath);
+});
 ```
 
 返回说明
 
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| imgPath | String | 图片在手机的绝对路径 |
+
 ### 3. 选择图片，回传网络地址
+
+初版
+
+```
+dd.device.notification.chooseImage ({
+    cancelButton: “取消”，
+    otherButtons: [“拍照”,”相册”]，
+    onSuccess: function(data) {
+        // data => {result:"true", picPath:"http://xxxx"} 
+    },
+    onFail: function(error) {}
+})
+
+```
+
+改版
+
+```
+var params = {
+    cancelButton: '取消',
+    otherButtons: ['拍照', '相册']
+};
+
+YBB.hybrid.device.chooseImg(params).then(function(info) {
+    // info = {result: boolean, picPath: string}
+    // info.picPath 为网络地址
+    console.log(info.picPath);
+});
+```
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| result | String | 字符串‘true’ |
+| picPath | String | 图片http地址 |
 
 ### 4. 定位
 
@@ -121,9 +201,52 @@ YBB.hybrid.device.getUUID().then(function(info) {
 | :--- | :--- | :--- |
 | uuid | String | 设备唯一标识 |
 
-### 13. 授权
+### 13. 授权（初版不存在，改版后新增）
 
-### 14. 认证
+```
+var targetUrl = 'http://user.test.com';
+YBB.hybrid.user.authorization(targetUrl).then(function(data) {
+    /**
+    * data = {
+    *   state: string;
+    *   code: string;
+    * }
+    */
+    console.log(data);
+});
+```
+
+返回说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| code | String | 授权码 |
+
+### 14. 认证（初版不存在，改版后新增）
+
+```
+var appId = 'appId';
+YBB.hybrid.user.certification(appId).then(function(data) {
+    /**
+    * data = {
+    *   certSuccess: string;  // '0' 失败， '1' 成功，'2'审核中
+    *   username: string; // 用户名
+    *   idCardNo: string; // 身份证号码
+    *   mobile: string; // 手机号码
+    * }
+    */
+    console.log(data); 
+});
+```
+
+返回说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| idCardNo | String | 身份证 |
+| username | String | 姓名 |
+| mobile | String | 手机号 |
+| certSuccess  | String | 认证结果 0 -失败 ， 1- 成功 |
 
 ### 15. 登录
 
