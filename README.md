@@ -168,6 +168,8 @@ YBB.hybrid.navigation.hide();
 | :--- | :--- | :--- |
 | navStatue | String | hide |
 
+
+
 ### 6.显示导航栏
 
 初版
@@ -449,8 +451,6 @@ YBB.hybrid.util.openSchemeURI(url, {
   | signStatus | Boolean | 从第三方签约回来，不表示签约成功 |
 * 其他跳转：无返回
 
-
-
 ### 18. 获取APP当前版本
 
 ```
@@ -536,4 +536,132 @@ YBB.hybrid.util.share(args).then(function() {
 | description | String | 活动标题 |
 
 返回说明：无返回值
+
+### 21.打开新窗口
+
+初版
+
+```
+dd.biz.util.openLink({
+    url:'http://www.baidu.com',
+    onSuccess: function(data) {},
+    onFail: function(error) {}
+})
+```
+
+  
+改版
+
+```
+var url = 'http://user.test.com';
+var params = {name: 'name'};
+// params 是可选的
+YBB.hybrid.util.openLink(url, params);
+
+```
+
+返回说明：无返回
+
+先使用场景及传值
+
+* 打开二维码
+  ```
+  整体传值
+  {
+      handlerName = "biz.util.openLink";
+      params =     {
+          params =         {
+              cardType = 11;
+          };
+          url = "ybb://openQRCode";
+      };
+  }
+
+  ```
+* 打开智慧医疗
+  ```
+  {
+      handlerName = "biz.util.openLink";
+      params =     {
+          url = "ybb://smart_healthcare";
+      };
+  }
+  ```
+* 打开轨道交通
+  ```
+  整体传值
+  {
+      handlerName = "biz.util.openLink";
+      params =     {
+          url = "ybb://RailtransitRedirectURI?appId=100031";
+      };
+  }
+  ```
+
+* 成长值 
+  * 认证
+    ```
+    {
+        handlerName = "biz.util.openLink";
+        params =     {
+            params =         {
+                score = integrityScore;
+            };
+            url = "ybb://identityFill?action=realNameFlow";
+        };
+    }
+
+
+
+
+    ```
+* * 打开信用分
+    ```
+    {
+        handlerName = "biz.util.openLink";
+        params =     {
+            params =         {
+                score = integrityScore;
+            };
+            url = "ybb://sesame_credit?action=growup";
+        };
+    }
+
+
+
+    ```
+* * 设置昵称
+    ```
+    {
+        handlerName = "biz.util.openLink";
+        params =     {
+            url = "ybb://nickname?action=growup";
+        };
+    }
+    ```
+  * 设置头像
+    ```
+    {
+        handlerName = "biz.util.openLink";
+        params =     {
+            url = "ybb://head_portrait?action=growup";
+        };
+    }
+
+    ```
+  * 签到
+    ```
+    {
+        handlerName = "biz.util.openLink";
+        params =     {
+            url = "ybb://sign_in?action=growup";
+        };
+    }
+
+
+    ```
+
+               
+
+          
 
