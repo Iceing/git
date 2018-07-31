@@ -99,6 +99,12 @@ YBB.hybrid.device.chooseImg(params).then(function(info) {
 | result | String | 字符串‘true’ |
 | picPath | String | 图片http地址 |
 
+返回样例
+
+```
+{"result":"{\"result\":\"true\",\"picPath\":\"https:\\\/\\\/nnapp.cloudbae.cn:38080\\\/storage\\\/api\\\/v1\\\/image\\\/iOSKey\\\/0905f33d1584465ca8a3f4621bbbeca6.jpg\"}","errorCode":"0"}
+```
+
 ### 4. 定位
 
 初版
