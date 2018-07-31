@@ -162,7 +162,7 @@ dd.biz.navigation.hide({
 YBB.hybrid.navigation.hide();
 ```
 
-返回说明：内容可选返回，但必须由 js 回调。 
+返回说明：内容可选返回，但必须由 js 回调。
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -185,7 +185,7 @@ dd.biz.navigation.show({
 YBB.hybrid.navigation.show();
 ```
 
-返回说明：内容可选返回，但必须由 js 回调。 
+返回说明：内容可选返回，但必须由 js 回调。
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -248,7 +248,6 @@ dd.biz.navigation.setSegmentedTitle({
     },
     onFail: function(err) {}
 });
-
 ```
 
 参数说明
@@ -264,7 +263,7 @@ dd.biz.navigation.setSegmentedTitle({
 | :--- | :--- | :--- |
 | buttonIndex | Number | 当前选中index |
 
-### 10.打电话
+### 10.打电话（不存在改版或者重写）
 
 ```
 dd.biz.telephone.call({
