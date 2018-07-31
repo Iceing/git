@@ -421,7 +421,35 @@ YBB.hybrid.util.getIP().then(function(response) {
 | :--- | :--- | :--- |
 | clientIP | String | IP地址 |
 
-### 17. 打开外部应用
+### 17. 打开外部应用\(初版不存在，改版后新增\)
+
+```
+var url = 'http://user.test.com';
+var params = {name: 'name'};
+// params 是可选的
+YBB.hybrid.util.openSchemeURI(url, params);
+
+// 免密支付签约示例代码
+
+var url = '签约url';
+YBB.hybrid.util.openSchemeURI(url, {
+    paySign: 'wx' // 或者 'alipay'
+}).then(function(result) {
+    if (result.signStatus) {
+      console.log('签约成功');
+    }
+});
+```
+
+返回说明：
+
+* 支付签约
+  | 参数 | 类型 | 说明 |
+  | :--- | :--- | :--- |
+  | signStatus | Boolean | 从第三方签约回来，不表示签约成功 |
+* 其他跳转：无返回
+
+
 
 ### 18. 获取APP当前版本
 
