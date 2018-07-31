@@ -96,6 +96,31 @@ YBB.hybrid.navigation.setRightBtn(isShow, options).click(function() {
 
 ### 12. 设备唯一标识
 
+初版
+
+```
+dd.device.base.getUUID ({
+    onSuccess: function(data) {
+       // data=> {uuid : 112233...566} 
+    },
+    onFail: function(error) {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.device.getUUID().then(function(info) {
+   console.log(info.uuid); 
+});
+```
+
+返回说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| uuid | String | 设备唯一标识 |
+
 ### 13. 授权
 
 ### 14. 认证
@@ -107,8 +132,6 @@ YBB.hybrid.user.login();
 ```
 
 返回说明：无返回
-
-
 
 ### 16.获取IP
 
