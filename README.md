@@ -576,6 +576,7 @@ YBB.hybrid.util.openLink(url, params);
   ```
 
 * 打开智慧医疗
+
   ```
   {
       handlerName = "biz.util.openLink";
@@ -584,6 +585,7 @@ YBB.hybrid.util.openLink(url, params);
       };
   }
   ```
+
 * 打开轨道交通
 
   ```
@@ -598,8 +600,9 @@ YBB.hybrid.util.openLink(url, params);
 
 * 成长值
 
-  * 认证
+  * 认证  
     {
+
     ```
     handlerName = "biz.util.openLink";
     params =     {
@@ -611,7 +614,9 @@ YBB.hybrid.util.openLink(url, params);
     ```
 
     }
+
   * 打开信用分
+
     ```
     {
         handlerName = "biz.util.openLink";
@@ -622,10 +627,7 @@ YBB.hybrid.util.openLink(url, params);
             url = "ybb://sesame_credit?action=growup";
         };
     }
-
     ```
-
-
 
 * * 设置昵称
     ```
@@ -648,13 +650,13 @@ YBB.hybrid.util.openLink(url, params);
     ```
 
   * 签到
+
     ```
     {
     handlerName = "biz.util.openLink";
     params =     {
         url = "ybb://sign_in?action=growup";
     };
-
     ```
 
 
