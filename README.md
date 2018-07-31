@@ -147,13 +147,122 @@ YBB.hybrid.location.get().then(function(location) {
 
 ### 5.隐藏导航栏
 
+初版
+
+```
+dd.biz.navigation.hide({
+    onSuccess: function(data) {},
+    onFail: function(error) {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.navigation.hide();
+```
+
+返回说明：内容可选返回，但必须由 js 回调。 
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| navStatue | String | hide |
+
 ### 6.显示导航栏
+
+初版
+
+```
+dd.biz.navigation.show({
+    onSuccess: function(data) {},
+    onFail: function(error) {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.navigation.show();
+```
+
+返回说明：内容可选返回，但必须由 js 回调。 
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| navStatue | String | show |
 
 ### 7.设置导航栏标题
 
+初版
+
+```
+dd.biz.navigation.setTitle({
+    title: '邮箱正文',
+    onSuccess: function(data) {},
+    onFail: function(error) {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.navigation.setTitle({title: 'string'})
+```
+
+参数说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| title | String | 标题 |
+
+返回说明：内容可选返回，但必须有js 回调。
+
 ### 8.关闭当前浏览器页面
 
-### 9. 设置导航栏分段控制器
+初版
+
+```
+dd.biz.navigation.close({
+    onSuccess: function(data) {},
+    onFail: function(error) {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.navigation.close();
+```
+
+返回说明：无返回。
+
+### 9. 设置导航栏分段控制器（不存在改版或者重写）
+
+初版
+
+```
+dd.biz.navigation.setSegmentedTitle({
+    segmentedTitle: ['11','22'],
+    onSuccess: function(data) {
+        // data => {buttonIndex: 0} 
+    },
+    onFail: function(err) {}
+});
+
+```
+
+参数说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| segmentedTitle | array\[String\] | 控制标题文本，数组内数据大小两个或三个，文字不宜过长，默认选择第一个（buttonIndex = 1） |
+| selected | String | 默认选中角标 |
+
+返回说明：
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| buttonIndex | Number | 当前选中index |
 
 ### 10.打电话
 
