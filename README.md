@@ -168,8 +168,6 @@ YBB.hybrid.navigation.hide();
 | :--- | :--- | :--- |
 | navStatue | String | hide |
 
-
-
 ### 6.显示导航栏
 
 初版
@@ -549,7 +547,6 @@ dd.biz.util.openLink({
 })
 ```
 
-  
 改版
 
 ```
@@ -557,7 +554,6 @@ var url = 'http://user.test.com';
 var params = {name: 'name'};
 // params 是可选的
 YBB.hybrid.util.openLink(url, params);
-
 ```
 
 返回说明：无返回
@@ -565,6 +561,7 @@ YBB.hybrid.util.openLink(url, params);
 先使用场景及传值
 
 * 打开二维码
+
   ```
   整体传值
   {
@@ -576,8 +573,8 @@ YBB.hybrid.util.openLink(url, params);
           url = "ybb://openQRCode";
       };
   }
-
   ```
+
 * 打开智慧医疗
   ```
   {
@@ -588,6 +585,7 @@ YBB.hybrid.util.openLink(url, params);
   }
   ```
 * 打开轨道交通
+
   ```
   整体传值
   {
@@ -598,24 +596,22 @@ YBB.hybrid.util.openLink(url, params);
   }
   ```
 
-* 成长值 
+* 成长值
+
   * 认证
-    ```
     {
-        handlerName = "biz.util.openLink";
-        params =     {
-            params =         {
-                score = integrityScore;
-            };
-            url = "ybb://identityFill?action=realNameFlow";
-        };
-    }
-
-
-
-
     ```
-* * 打开信用分
+    handlerName = "biz.util.openLink";
+    params =     {
+        params =         {
+            score = integrityScore;
+        };
+        url = "ybb://identityFill?action=realNameFlow";
+    };
+    ```
+
+    }
+  * 打开信用分
     ```
     {
         handlerName = "biz.util.openLink";
@@ -627,9 +623,10 @@ YBB.hybrid.util.openLink(url, params);
         };
     }
 
-
-
     ```
+
+
+
 * * 设置昵称
     ```
     {
@@ -640,6 +637,7 @@ YBB.hybrid.util.openLink(url, params);
     }
     ```
   * 设置头像
+
     ```
     {
         handlerName = "biz.util.openLink";
@@ -647,21 +645,17 @@ YBB.hybrid.util.openLink(url, params);
             url = "ybb://head_portrait?action=growup";
         };
     }
-
     ```
+
   * 签到
     ```
     {
-        handlerName = "biz.util.openLink";
-        params =     {
-            url = "ybb://sign_in?action=growup";
-        };
-    }
-
+    handlerName = "biz.util.openLink";
+    params =     {
+        url = "ybb://sign_in?action=growup";
+    };
 
     ```
 
-               
 
-          
 
