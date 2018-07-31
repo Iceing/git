@@ -77,7 +77,6 @@ dd.device.notification.chooseImage ({
     },
     onFail: function(error) {}
 })
-
 ```
 
 改版
@@ -101,6 +100,50 @@ YBB.hybrid.device.chooseImg(params).then(function(info) {
 | picPath | String | 图片http地址 |
 
 ### 4. 定位
+
+初版
+
+```
+dd.device.location.get ({
+    onSuccess: function(data) {
+        // data=> { 
+        //   "latitude": "120.0032", 
+        //   "longitude": "30.3238", 
+        //   "detailAddress": "转塘街道云栖小镇中大银座9号楼", 
+        //   "cityName":"杭州市", 
+        //   "region": "西湖区" 
+        //   } 
+    },
+    onFail: function() {}
+})
+```
+
+改版
+
+```
+YBB.hybrid.location.get().then(function(location) {
+    /**
+    * location = {
+    *   longitude: string; // 经度
+    *   latitude: string; // 纬度
+    *   detailAddress: string; // 详细地址
+    *   cityName: string; // 城市
+    *   region: string; // 区域名称
+    * }
+    */
+    console.log(location);
+});
+```
+
+返回说明
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| longitude | String | 经度 |
+| latitude | String | 纬度 |
+| detailAddress | String | 详细地址 |
+| cityName | String | 城市名 |
+| region | String | 区域 |
 
 ### 5.隐藏导航栏
 
@@ -246,7 +289,7 @@ YBB.hybrid.user.certification(appId).then(function(data) {
 | idCardNo | String | 身份证 |
 | username | String | 姓名 |
 | mobile | String | 手机号 |
-| certSuccess  | String | 认证结果 0 -失败 ， 1- 成功 |
+| certSuccess | String | 认证结果 0 -失败 ， 1- 成功 |
 
 ### 15. 登录
 
